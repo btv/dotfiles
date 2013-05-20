@@ -233,11 +233,16 @@ set incsearch               " Incrementally search while typing a /regex
 """" Display
 if has("gui_running")
     " Remove menu bar
-    set guioptions-=m
+    " set guioptions-=m
+    colorscheme desert
+    set guifont=Liberation\ Mono\ 11
 
     " Remove toolbar
-    set guioptions-=T
+    "set guioptions-=T
+else
+    colorscheme torte
 endif
+
 
 colorscheme molokai
 
