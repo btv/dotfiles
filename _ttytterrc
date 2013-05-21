@@ -1,0 +1,9 @@
+slowpost=3
+curl=1
+ssl=1
+vcheck=0
+ansi=1
+track=#python #haskell #git #devops #xmonad #erlang
+dmpause=8
+mentions=1
+readline=1
