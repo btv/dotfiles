@@ -31,7 +31,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "lxterminal"
+myTerminal      = "lilyterm"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -213,7 +213,9 @@ myLayout = minimize $ avoidStruts $ smartBorders $ onWorkspace "5-IM" pidginLayo
 
      -- coping from: http://pbrisbin.com/posts/xmonads_im_layout
      standardLayouts =  MosaicAlt M.empty ||| tiled ||| Mirror tiled ||| Full
-     pidginLayout = withIM (1%7) (Role "buddy_list") Grid
+     pidginLayout = withIM (1%7) (Or (psiRoaster) (pidginRoaster)) Grid
+     psiRoaster = And (Resource "main") (ClassName "psi")
+     pidginRoaster = Role "buddy_list"
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -235,6 +237,7 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , className =? "com-netscape-management-client-console-Console" --> doFloat
     , className =? "Pidgin"         --> doShift "5-IM"
+    , className =? "psi"            --> doShift "5-IM"
     , className =? "FireFox"        --> doShift "2"
     , className =? "Thunderbird"    --> doShift "1"
     , className =? "com-zerog-lax-LAX"  --> doFloat
