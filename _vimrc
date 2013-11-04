@@ -145,14 +145,14 @@ set numberwidth=1             " using only 1 column (and 1 space) while possible
 set background=dark           " We are using dark background in vim
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
-set wildmode=full             " <Tab> cycles between all matching choices.
+set wildmode=longest:full,full " <Tab> cycles between all matching choices.
 
 " don't bell or blink
 set noerrorbells
 set vb t_vb=
 
 " Ignore these files when completing
-set wildignore+=*.o,*.obj,.git,*.pyc
+set wildignore+=*.o,*.obj,.git,*.pyc,*.beam
 set wildignore+=eggs/**
 set wildignore+=*.egg-info/**
 
@@ -168,8 +168,9 @@ nnoremap <leader>. :lcd %:p:h<CR>
 
 """ Insert completion
 " don't select first item, follow typing in autocomplete
-set completeopt=menuone,longest,preview
+set completeopt=longest,menuone,preview
 set pumheight=6             " Keep a small completion window
+set complete=.,b,u
 
 
 """ Moving Around/Editing
@@ -184,7 +185,7 @@ set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
-set tabstop=4               " <tab> inserts 4 spaces 
+set tabstop=4               " <tab> inserts 4 spaces
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
@@ -226,7 +227,7 @@ set list
 """ Searching and Patterns
 set ignorecase              " Default to using case insensitive searches,
 set smartcase               " unless uppercase letters are used in the regex.
-set smarttab                " Handle tabs more intelligently 
+set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
@@ -261,6 +262,10 @@ nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
 " Select the item in the list with enter
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" TEST
+inoremap <expr> <TAB> pumvisible() ? "<C-N>" : "<Tab>"
+inoremap <expr> <S-TAB> pumvisible() ? "<C-P>" : "<S-Tab>"
+
 " ==========================================================
 " Javascript
 " ==========================================================
@@ -278,6 +283,8 @@ let g:acp_completeoptPreview=1
 " Mako/HTML
 autocmd BufNewFile,BufRead *.mako,*.mak,*.jinja2 setlocal ft=html
 autocmd FileType html,xhtml,xml,css setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+" Puppet and Puppet Templates
+autocmd BufNewFile,BufRead *.pp,*.erb setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " Python
 "au BufRead *.py compiler nose
