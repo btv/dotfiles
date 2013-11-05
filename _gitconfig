@@ -31,4 +31,7 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
     master = checkout master
+    rollback = reset --hard HEAD@{1}
 
+[branch]
+	autosetuprebase = always
