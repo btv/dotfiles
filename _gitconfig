@@ -22,6 +22,7 @@
     cim = commit -m
     br = branch
     co = checkout
+    cob = checkout -b
     df = diff
     dfs = diff --staged
     lg = log -p
@@ -33,6 +34,7 @@
     master = checkout master
     rollback = reset --hard HEAD@{1}
     prepush = !git checkout master && git pull && git checkout @{-1} && git rebase master
+    prewithpush = !git checkout master && git pull && git checkout @{-1} && git rebase master && git push
 
 [branch]
 	autosetuprebase = always
