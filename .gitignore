@@ -1,8 +1,6 @@
 *logs*
 *.log
 *~
-_vim/ropevim/src*
-_vim/ropevim/pylibs*
 *.swp
 *.pyc
 _xmonad/xmonad-x86_64-linux
