@@ -1,2 +1,0 @@
-Host *.ops *.prod *.qaperf2 *.int.threatmetrix.com
-    user bverdier
