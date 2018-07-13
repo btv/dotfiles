@@ -10,9 +10,6 @@
 [submodule "_vim/bundle/pyflakes"]
 	path = _vim/bundle/pyflakes
 	url = https://github.com/mitechie/pyflakes-pathogen.git
-[submodule "_vim/bundle/ack"]
-	path = _vim/bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
 [submodule "_vim/bundle/gundo"]
 	path = _vim/bundle/gundo
 	url = https://github.com/sjl/gundo.vim.git
@@ -34,9 +31,6 @@
 [submodule "_vim/bundle/nerdtree"]
 	path = _vim/bundle/nerdtree
 	url = https://github.com/vim-scripts/The-NERD-tree.git
-[submodule "_vim/bundle/acp"]
-	path = _vim/bundle/acp
-	url = https://github.com/vim-scripts/AutoComplPop.git
 [submodule "_vim/bundle/solarized"]
 	path = _vim/bundle/solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
@@ -58,9 +52,6 @@
 [submodule "_vim/bundle/coffee"]
 	path = _vim/bundle/coffee
 	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "_vim/bundle/ctrlp"]
-	path = _vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "_vim/bundle/vim-elixir"]
 	path = _vim/bundle/vim-elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
