@@ -111,9 +111,6 @@ imap <C-W> <C-O><C-W>
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
-map <leader>f :CtrlP<CR>
-map <leader>b :CtrlPBuffer<CR>
-
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
 
